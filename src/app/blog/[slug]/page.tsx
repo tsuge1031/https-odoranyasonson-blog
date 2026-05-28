@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { ja } from "date-fns/locale";
 import Link from "next/link";
 import type { Metadata } from "next";
+import GiscusComments from "@/components/GiscusComments";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  return { title: `${post.title} | においやさんのそんそん`, description: post.excerpt };
+  return { title: `${post.title} | 踊る阿呆の踊らにゃソンソンblog`, description: post.excerpt };
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -62,6 +63,8 @@ export default async function BlogPostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>
+
+      <GiscusComments />
     </div>
   );
 }

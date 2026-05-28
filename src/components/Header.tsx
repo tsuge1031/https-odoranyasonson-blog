@@ -10,6 +10,7 @@ export default function Header() {
         <nav className="flex gap-6 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground transition-colors">記事一覧</Link>
           <Link href="/about" className="hover:text-foreground transition-colors">このブログについて</Link>
+          <Link href="/contact" className="hover:text-foreground transition-colors">お問い合わせ</Link>
         </nav>
       </div>
     </header>
